@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Antakshari</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="game-title">Word Antakshari</h1>
+    
+    <div class="current-word">
+      <%= game.currentWord %>
+    </div>
+    
+    <div class="score-info">
+      <p>Score: <%= game.score %></p>
+      <p>Streak: <%= game.streak %></p>
+    </div>
+
+    <form action="/games/<%= game._id %>/submit" method="POST">
+      <input type="text" name="word" placeholder="Enter word..." required>
+      <button type="submit">Submit Word</button>
+    </form>
+  </div>
+</body>
+</html>
